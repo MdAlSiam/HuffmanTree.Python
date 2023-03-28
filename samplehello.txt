@@ -1,0 +1,40 @@
+Making huffman tree!
+Original list of individual Huffman trees (str):
+('l',15,None,None,None)
+('o',10,None,None,None)
+('w',5,None,None,None)
+('r',5,None,None,None)
+('h',5,None,None,None)
+('e',5,None,None,None)
+('d',5,None,None,None)
+
+Merging trees to make a complete Huffman Tree:
+Merging tree ('d',5,None,None,None)     and ('e',5,None,None,None)     to make ('de',10,'d','e',None)
+	Merged child trees left ('d',5,None,None,0) and right ('e',5,None,None,1)
+Merging tree ('h',5,None,None,None)     and ('r',5,None,None,None)     to make ('hr',10,'h','r',None)
+	Merged child trees left ('h',5,None,None,0) and right ('r',5,None,None,1)
+Merging tree ('w',5,None,None,None)     and ('de',10,'d','e',None)     to make ('wde',15,'w','de',None)
+	Merged child trees left ('w',5,None,None,0) and right ('de',10,'d','e',1)
+Merging tree ('hr',10,'h','r',None)     and ('o',10,None,None,None)    to make ('hro',20,'hr','o',None)
+	Merged child trees left ('hr',10,'h','r',0) and right ('o',10,None,None,1)
+Merging tree ('l',15,None,None,None)    and ('wde',15,'w','de',None)   to make ('lwde',30,'l','wde',None)
+	Merged child trees left ('l',15,None,None,0) and right ('wde',15,'w','de',1)
+Merging tree ('hro',20,'hr','o',None)   and ('lwde',30,'l','wde',None) to make ('hrolwde',50,'hro','lwde',None)
+	Merged child trees left ('hro',20,'hr','o',0) and right ('lwde',30,'l','wde',1)
+Merging done!
+Final tree
+('hrolwde',50,'hro','lwde',None)
+
+
+Original text was 50 characters in length which, with 1 byte per character, would be 50 ASCII bytes!
+The encoding table is:
+'d':1110
+'e':1111
+'h':000
+'l':10
+'o':01
+'r':001
+'w':110
+New text is 135 bits in length, which is 17 bytes! (Plus we'd also have to store the decoding table as well.)
+That is 34.00% of the size
+Program completed successfully!
